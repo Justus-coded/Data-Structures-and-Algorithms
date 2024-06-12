@@ -1,0 +1,31 @@
+array = [1,2,3,4]
+
+# O(nlogn) time and O(n) space
+def sorted_square_arr(array):
+    arr = [n**2 for n in array ]
+
+    return arr
+
+new = sorted_square_arr(array)
+print (new)
+
+#Optimal Solution O(n) time and O(n) space
+def sortedSquaredArray(array):
+    sortedSquares =[0 for _ in array]
+    smallerValueIdx = 0
+    largerValueIdx = len(array)-
+    
+    for idx in reversed(range(len(array))):
+        smallerValue = array[smallerValueIdx]
+        largerValue = array[largerValueIdx]
+
+        if abs(smallerValue) > abs(largerValue):
+            sortedSquares[idx] = smallerValue*smallerValue
+            smallerValueIdx+=1
+        else:
+            sortedSquares[idx] = largerValue*
+            largerValueIdx -=1
+    return sortedSquares
+
+
+
